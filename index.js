@@ -9,6 +9,10 @@ or in the "license" file accompanying this file. This file is distributed on an 
 
 */
 
+require('dotenv').config()
+
+console.log(process.env)
+
 // Define our dependencies
 var express        = require('express');
 var session        = require('express-session');
@@ -18,8 +22,8 @@ var request        = require('request');
 var handlebars     = require('handlebars');
 
 // Define our constants, you will change these with your own
-const TWITCH_CLIENT_ID = '226970d9mbfxsg83n2taksg2c44hzs';
-const TWITCH_SECRET    = 's5uuq9hzmxcnvz2clillwozecuvytp';
+const TWITCH_CLIENT_ID = process.env.TWITCH_CLIENT_ID;
+const TWITCH_SECRET    = process.env.TWITCH_SECRET;
 const SESSION_SECRET   = '<SOME SECRET HERE>';
 const CALLBACK_URL     = '<YOUR REDIRECT URL HERE>';  // You can run locally with - http://localhost:3000/auth/twitch/callback
 
